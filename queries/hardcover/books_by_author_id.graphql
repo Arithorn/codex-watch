@@ -1,0 +1,17 @@
+    query BooksByAuthorId($authorId: Int) {
+    books(
+          where: {
+              contributions: {
+                  author: {
+                      id: {_eq: $authorId}
+                  }
+              }
+          }
+          limit: 15
+          order_by: {users_count: desc}
+    ) {
+          pages
+          title
+          id
+    }
+}   

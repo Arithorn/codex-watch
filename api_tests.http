@@ -1,0 +1,24 @@
+### Load Google API Key from environment variable
+@google_api_key = {{$dotenv GOOGLE_BOOKS_API_KEY}}
+@hardcover_api_key = {{$dotenv HARDCOVER_API_KEY}}
+# Note: If using containerEnv instead of runArgs/--env-file,
+# you might just use {{$processEnv GOOGLE_BOOKS_API_KEY}}
+
+
+### Test Google Books API - Search for an author
+# @name googleBooksSearch
+GET https://www.googleapis.com/books/v1/volumes?q=inauthor:"Zogarth"&key={{google_api_key}}&maxResults=5
+Accept: application/json
+
+### Test Hardcover Books API - Search for an author
+# # @name hardcoverBooksSearch
+# GET https://www.googleapis.com/books/v1/volumes?q=inauthor:"Zogarth"&key={{google_api_key}}&maxResults=5
+# Accept: application/json
+
+
+
+### Test Open Library API - Search for an author
+# @name openLibrarySearch
+GET https://openlibrary.org/search/authors.json?q=Zogarth&limit=100
+Accept: application/json
+
