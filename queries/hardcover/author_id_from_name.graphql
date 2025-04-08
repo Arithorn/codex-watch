@@ -1,4 +1,5 @@
-query AuthorIdFromName($name: String){
-    authors(where: {name: {_eq : $name}}){
+query AuthorIdFromName($name: String) {
+  authors(where: { name: { _eq: $name } }) {
     id
-}}
+  }
+}
