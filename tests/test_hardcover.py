@@ -59,10 +59,10 @@ variable_values2 = {"name": "Zogarth"}
 # print(f"--- Querying Hardcover for Author ID: {AUTHOR_ID_TO_QUERY} ---")
 print(f"--- Get Zogarth Author ID")
 try:
-    # result = client.execute(get_author_books_query,
-    #                         variable_values=variable_values)
-    result = client.execute(get_author_id_query,
-                            variable_values=variable_values2)
+    result = client.execute(get_author_books_query,
+                            variable_values=variable_values)
+    # result = client.execute(get_author_id_query,
+    #                         variable_values=variable_values2)
 
     print("\n--- Result ---")
     print(json.dumps(result, indent=2))  # Pretty print the JSON result

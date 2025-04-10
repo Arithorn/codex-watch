@@ -1,0 +1,11 @@
+query BooksByAuthorId {
+  books(
+    where: { contributions: { author: { id: { _eq: 344878 } } } }
+    limit: 15
+    order_by: { users_count: desc }
+  ) {
+    pages
+    title
+    id
+  }
+}
